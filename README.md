@@ -8,6 +8,34 @@
 - Uses a ReWoo LangGraph agent to interact with user.
 - Minimal clone of discord ui for webapp
 
+<details>
+<summary><h2>What is ReWOO?</h2></summary>
+
+ReWOO is an agent architecture designed to improve efficiency and simplify fine-tuning for tool use in AI systems. It features three main modules:
+
+![image](https://github.com/user-attachments/assets/6745dd30-3470-4719-94aa-29357a301579)
+
+### 🧠 Planner
+- Generates a step-by-step plan in the following format:
+  ```
+  Plan: <reasoning>
+  #E1 = Tool[argument for tool]
+  Plan: <reasoning>
+  #E2 = Tool[argument for tool with #E1 variable substitution]
+  ...
+  ```
+- Leverages **variable substitution** to avoid redundant calls to the Planner LLM.
+
+### Worker
+- Executes the tools using the arguments provided by the Planner.
+
+### 🧠 Solver
+- Generates the final answer for the original task using the observations from the Worker.
+
+Modules marked with a 🧠 emoji involve an LLM call. By consolidating tool usage planning, ReWOO reduces token consumption and execution time compared to ReACT-style architectures.
+
+</details>
+
 <!-- ### :movie_camera: Demo
 
 [![YouTube](http://i.ytimg.com/vi/<id>/hqdefault.jpg)](https://www.youtube.com/watch?v=<id>) -->
@@ -27,8 +55,7 @@
 
 #### **Setting Up the Agent and UI**
 
-##### **1. Get an API Key**
-- Obtain a **GITHUB PAT**. 
+##### **1. Get an GITHUB PAT**
 
 ##### **2. Clone the Repository**
 - Clone the repository to your local machine:
@@ -45,7 +72,7 @@
    ```sh
    poetry install
    ```
-- Create a `.env` file inside the `./agent` directory with your **OPENAI_API_KEY**:
+- Create a `.env` file inside the `./agent` directory with your **GITHUB_PAT**:
    ```
    OPENAI_API_KEY=YOUR_GITHUB_PAT_HERE
    ```
@@ -63,7 +90,7 @@
    ```sh
    pnpm i
    ```
-- Create a `.env` file inside the `./ui` directory with your **OPENAI_API_KEY**:
+- Create a `.env` file inside the `./ui` directory with your **GITHUB_PAT**:
    ```
    OPENAI_API_KEY=YOUR_GITHUB_PAT_HERE
    ```
