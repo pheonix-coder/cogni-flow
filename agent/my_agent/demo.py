@@ -15,8 +15,8 @@ app = FastAPI()
 sdk = CopilotKitSDK(
     agents=[
         LangGraphAgent(
-            name="chatbot",
-            description="A sample chatbot",
+            name="rewoo_agent",
+            description="A q&a agent using rewoo",
             graph=graph,
         )
     ],

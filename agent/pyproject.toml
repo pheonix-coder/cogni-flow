@@ -25,6 +25,11 @@ python-dotenv = "^1.0.1"
 langchain-core = "^0.3.25"
 langgraph-cli = {extras = ["inmem"], version = "^0.1.64"}
 langchain-groq = "^0.2.2"
+langgraph = "^0.2.60"
+langchain-openai = "^0.2.14"
+tavily-python = "^0.5.0"
+ipykernel = "^6.29.5"
+duckduckgo-search = "^7.1.1"
 
 [tool.poetry.scripts]
 demo = "my_agent.demo:main"

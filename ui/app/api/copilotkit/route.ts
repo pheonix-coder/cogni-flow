@@ -1,11 +1,17 @@
 import { NextRequest } from "next/server";
 import {
   CopilotRuntime,
-  GroqAdapter,
+  OpenAIAdapter,
   copilotRuntimeNextJSAppRouterEndpoint,
 } from "@copilotkit/runtime";
+import OpenAI from "openai";
 
-const serviceAdapter = new GroqAdapter({ model: "llama-3.3-70b-versatile" });
+const openai = new OpenAI({
+  baseURL: "https://models.inference.ai.azure.com",
+  apiKey: process.env.OPENAI_API_KEY
+})
+
+const serviceAdapter = new OpenAIAdapter({ openai, model: "gpt-4o" });
 
 const runtime = new CopilotRuntime({
   remoteEndpoints: [
