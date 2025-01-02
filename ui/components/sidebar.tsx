@@ -58,7 +58,7 @@ export default function Sidebar({
           <ScrollArea className="flex-1">
             <div className="p-4">
               <h3 className="font-semibold mb-2">Planova</h3>
-              <p className="text-sm text-muted-foreground">Your AI Assistant</p>
+              <p className="text-sm text-muted-foreground">A chatbot using ReWoo agent to answer your queries :)</p>
             </div>
           </ScrollArea>
           <div className="p-3 border-t border-border flex items-center justify-between">

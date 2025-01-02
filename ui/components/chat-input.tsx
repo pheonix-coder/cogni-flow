@@ -19,17 +19,17 @@ export default function ChatInput({
 }: ChatInputProps) {
   return (
     <div className="p-4 border-t border-border">
-      <div className="relative">
-        {isLoading && (
-          <div className="flex items-center gap-2 mb-2 text-sm text-muted-foreground">
-            <div className="flex space-x-1">
-              <div className="w-2 h-2 bg-current rounded-full animate-bounce" />
-              <div className="w-2 h-2 bg-current rounded-full animate-bounce [animation-delay:0.2s]" />
-              <div className="w-2 h-2 bg-current rounded-full animate-bounce [animation-delay:0.4s]" />
-            </div>
-            AI thinking...
+      {isLoading && (
+        <div className="flex items-center gap-2 mb-2 text-sm text-muted-foreground">
+          <div className="flex space-x-1">
+            <div className="w-2 h-2 bg-current rounded-full animate-bounce" />
+            <div className="w-2 h-2 bg-current rounded-full animate-bounce [animation-delay:0.2s]" />
+            <div className="w-2 h-2 bg-current rounded-full animate-bounce [animation-delay:0.4s]" />
           </div>
-        )}
+          Planova thinking...
+        </div>
+      )}
+      <div className="relative">
         <Input
           value={input}
           onChange={(e) => setInput(e.target.value)}
