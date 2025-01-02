@@ -1,67 +1,77 @@
-# CoAgents Starter
+![cogni-flow](https://socialify.git.ci/pheonix-coder/cogni-flow/image?custom_description=QnA+AI+webapp+using+ReWoo+Agent&description=1&font=KoHo&name=1&owner=1&pattern=Overlapping+Hexagons&theme=Light)
 
-This example contains a simple starter project.
 
-**These instructions assume you are in the `coagents-starter/` directory**
+### ⭐ About  
 
-## Running the Agent
+- Open-source web app for asking questions.  
+- Built with Next.js, CopilotKit.  
+- Uses a ReWoo LangGraph agent to interact with user.
+- Minimal clone of discord ui for webapp
 
-First, install the dependencies:
+<!-- ### :movie_camera: Demo
 
-```sh
-cd agent
-poetry install
-```
+[![YouTube](http://i.ytimg.com/vi/<id>/hqdefault.jpg)](https://www.youtube.com/watch?v=<id>) -->
 
-Then, create a `.env` file inside `./agent` with the following:
+### :hammer_and_wrench: Tech Stack
 
-```
-GROQ_API_KEY=...
-```
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-black?logo=next.js" alt="Next.js" />
+  <img src="https://img.shields.io/badge/CopilotKit-🪁-black" alt="CopilotKit" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/ShadCN--UI-7F56D9" alt="ShadCN UI" />
+  <img src="https://img.shields.io/badge/LangGraph-purple" alt="LangGraph" />
+  <img src="https://img.shields.io/badge/FastAPI-blue" alt="FastAPI" />
+</p>
 
-IMPORTANT:
-Make sure the OpenAI API Key you provide, supports gpt-4o.
+### :outbox_tray: Set up
 
-Then, run the demo:
+#### **Setting Up the Agent and UI**
 
-```sh
-poetry run demo
-```
+##### **1. Get an API Key**
+- Obtain a **GITHUB PAT**. 
 
-## Running the UI
+##### **2. Clone the Repository**
+- Clone the repository to your local machine:
+   ```sh
+   git clone https://github.com/pheonix-coder/cogni-flow.git
+   ```
 
-First, install the dependencies:
+##### **3. Set Up the Agent**
+- Navigate to the agent directory:
+   ```sh
+   cd agent
+   ```
+- Install dependencies using Poetry:
+   ```sh
+   poetry install
+   ```
+- Create a `.env` file inside the `./agent` directory with your **OPENAI_API_KEY**:
+   ```
+   OPENAI_API_KEY=YOUR_GITHUB_PAT_HERE
+   ```
+- Run the agent demo:
+   ```sh
+   poetry run demo
+   ```
 
-```sh
-cd ./ui
-pnpm i
-```
+##### **4. Set Up the UI**
+- Navigate to the UI directory:
+   ```sh
+   cd ./ui
+   ```
+- Install dependencies using pnpm:
+   ```sh
+   pnpm i
+   ```
+- Create a `.env` file inside the `./ui` directory with your **OPENAI_API_KEY**:
+   ```
+   OPENAI_API_KEY=YOUR_GITHUB_PAT_HERE
+   ```
+- Run the Next.js project:
+   ```sh
+   pnpm dev
+   ```
 
-Then, create a `.env` file inside `./ui` with the following:
-
-```
-GROQ_API_KEY=...
-```
-
-Then, run the Next.js project:
-
-```sh
-pnpm run dev
-```
-
-## Usage
-
-Navigate to [http://localhost:3000](http://localhost:3000).
-
-# LangGraph Studio
-
-Run LangGraph studio, then load the `./agent` folder into it.
-
-Make sure to create teh `.env` mentioned above first!
-
-# Troubleshooting
-
-A few things to try if you are running into trouble:
-
-1. Make sure there is no other local application server running on the 8000 port.
-2. Under `/agent/my_agent/demo.py`, change `0.0.0.0` to `127.0.0.1` or to `localhost`
+#### **Troubleshooting**
+1. Ensure no other local application is running on port **8000**.
+2. In the file `/agent/rag_agent/demo.py`, change the address from `0.0.0.0` to `127.0.0.1` or `localhost` if needed.
