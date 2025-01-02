@@ -72,9 +72,10 @@ Modules marked with a 🧠 emoji involve an LLM call. By consolidating tool usag
    ```sh
    poetry install
    ```
-- Create a `.env` file inside the `./agent` directory with your **GITHUB_PAT**:
+- Create a `.env` file inside the `./agent` directory with your **GITHUB_PAT** and **TAVILY_API_KEY**:
    ```
    OPENAI_API_KEY=YOUR_GITHUB_PAT_HERE
+   TAVILY_API_KEY=YOUR_TAVILY_API_KEY
    ```
 - Run the agent demo:
    ```sh
