@@ -62,15 +62,20 @@ search = TavilySearchResults()
 def _get_current_task(state: ReWOO):
     if "results" not in state or state["results"] is None:
         return 1
-    if len(state["results"]) == len(state["steps"]):
+    completed_steps = len(state["results"])
+    if completed_steps >= len(state["steps"]):
         return None
     else:
-        return len(state["results"]) + 1
+        return completed_steps + 1
 
 
 def tool_execution(state: ReWOO):
     """Worker node that executes the tools of a given plan."""
+    
     _step = _get_current_task(state)
+    if _step is None:
+        return state
+    
     step = state["steps"][_step - 1]
     _results = state.get("results", {})
 
