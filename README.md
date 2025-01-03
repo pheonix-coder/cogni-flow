@@ -36,9 +36,8 @@ Modules marked with a 🧠 emoji involve an LLM call. By consolidating tool usag
 
 </details>
 
-<!-- ### :movie_camera: Demo
-
-[![YouTube](http://i.ytimg.com/vi/<id>/hqdefault.jpg)](https://www.youtube.com/watch?v=<id>) -->
+### :movie_camera: Demo
+[![YouTube](http://i.ytimg.com/vi/lsqSSLxT8bE/hqdefault.jpg)](https://www.youtube.com/watch?v=lsqSSLxT8bE)
 
 ### :hammer_and_wrench: Tech Stack
 
